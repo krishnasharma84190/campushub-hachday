@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>CampusHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/theme.js"></script></head>
+<body>
+  <h1>CampusHub</h1>
+  <a href="/create">+ Create Event</a>
+  <ul>
+    {% for e in events %}
+         <li><a href="/event/{{ e.id }}">{{ e.title }}</a> | {{ e.date }} | {{ e.venue }}</li>
+    {% else %}
+      <li>No events yet</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
